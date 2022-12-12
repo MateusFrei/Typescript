@@ -1,5 +1,6 @@
 
 class Romanos {
+
     private arabicos = [
         1,
         5,
@@ -9,7 +10,7 @@ class Romanos {
         500,
         1000
     ]
-    
+        
     private romanos = [
         'I',
         'V',
@@ -19,26 +20,39 @@ class Romanos {
         'D',
         'M'
     ]
+    
 
     converte(arabico: number):string{
-        
-        const posicao_encontrada = this.arabicos.indexOf(arabico);
-        if(posicao_encontrada >= 0){
-            return this.romanos[posicao_encontrada];
+
+        if(arabico <= 0){
+
+            throw new Error("Não esxite este valor em romano");
+
         } else {
-            const posicao_encontrada2 = this.arabicos.indexOf(arabico-1);
-            if (posicao_encontrada2 >= 0) {
-                // ok
-                return this.romanos[posicao_encontrada2]+"I";
-            } else {
-                const posicao_encontrada3 = this.arabicos.indexOf(arabico-2);
-                if (posicao_encontrada3 >= 0) {
-                    // ok
-                    return this.romanos[posicao_encontrada3]+"II";
-                }
+
+            if (arabico > 0) {
+
+                const unidade = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+                const desenas = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+                const centenas = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+                const milhares = ["", "M", "MM", "MMM"];
+              
+                const M = Math.floor(arabico / 1000); //mil
+                const CM = arabico % 1000; //novecentos
+                const C = Math.floor(CM / 100); //cem
+                const XC = CM % 100; // noventa
+                const X = Math.floor(XC / 10); //dez
+                const I = XC % 10;
+                
+                var roman = milhares[M] + centenas[C] + desenas[X] + unidade[I];
+                
+                return roman;
+
             }
+
         }
-        throw new Error("arabico desconhecido");
+        throw new Error("Valor desconhecido");
+
     } 
 }
 
