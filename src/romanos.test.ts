@@ -140,16 +140,15 @@ describe('romanos', () => {
         expect (numeroRomanos).toEqual("MCMXCIX");
     });
 
-
-    it('deveria converter 2000 para "MM"', () => {
+    it('Testando erro', () => {
         //setup
         const sut = new Romanos();
-        //action
-        const numeroRomanos = sut.converte(2000); 
+        //action        
         //expectation
-        expect (numeroRomanos).toEqual("MM");
+        expect ( 
+            () => { sut.converte(2000) } 
+        ).toThrow('');
     });
-
 
     it('Testando erro', () => {
         //setup

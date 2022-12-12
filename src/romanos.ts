@@ -9,7 +9,7 @@ class Romanos {
 
         } else {
 
-            if (arabico > 0) {
+            if (arabico < 2000) {
 
                 const unidade = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
                 const desenas = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
@@ -30,7 +30,7 @@ class Romanos {
             }
 
         }
-        
+
         throw new Error("Valor desconhecido");
 
     } 
