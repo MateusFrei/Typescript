@@ -1,27 +1,6 @@
 
 class Romanos {
 
-    private arabicos = [
-        1,
-        5,
-        10,
-        50,
-        100,
-        500,
-        1000
-    ]
-        
-    private romanos = [
-        'I',
-        'V',
-        'X',
-        'L',
-        'C',
-        'D',
-        'M'
-    ]
-    
-
     converte(arabico: number):string{
 
         if(arabico <= 0){

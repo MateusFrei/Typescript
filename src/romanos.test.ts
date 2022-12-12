@@ -112,6 +112,16 @@ describe('romanos', () => {
         expect (numeroRomanos).toEqual("XLIX");
     });
 
+    
+    it('deveria converter 1249 para "MCCXLIX"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(1249); 
+        //expectation
+        expect (numeroRomanos).toEqual("MCCXLIX");
+    });
+
 
     it('Testando erro', () => {
         //setup
