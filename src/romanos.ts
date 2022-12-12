@@ -14,7 +14,7 @@ class Romanos {
                 const unidade = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
                 const desenas = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
                 const centenas = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
-                const milhares = ["", "M", "MM", "MMM"];
+                const milhares = ["", "M"];
               
                 const M = Math.floor(arabico / 1000); //mil
                 const CM = arabico % 1000; //novecentos
@@ -30,6 +30,7 @@ class Romanos {
             }
 
         }
+        
         throw new Error("Valor desconhecido");
 
     } 

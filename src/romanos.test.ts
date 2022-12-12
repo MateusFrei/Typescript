@@ -122,6 +122,34 @@ describe('romanos', () => {
         expect (numeroRomanos).toEqual("MCCXLIX");
     });
 
+    it('deveria converter 1249 para "MCCXLIX"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(1249); 
+        //expectation
+        expect (numeroRomanos).toEqual("MCCXLIX");
+    });
+
+    it('deveria converter 1999 para "MCMXCIX"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(1999); 
+        //expectation
+        expect (numeroRomanos).toEqual("MCMXCIX");
+    });
+
+
+    it('deveria converter 2000 para "MM"', () => {
+        //setup
+        const sut = new Romanos();
+        //action
+        const numeroRomanos = sut.converte(2000); 
+        //expectation
+        expect (numeroRomanos).toEqual("MM");
+    });
+
 
     it('Testando erro', () => {
         //setup
